@@ -1,0 +1,94 @@
+.container-fluid {
+
+    background-color: #d3d3d3;
+    text-align: center;
+    padding: 30px;
+}
+
+.input {
+    background-color: snow;
+    border-radius: 20px;
+    border: solid 1px; 
+    padding: 0.7%;
+    margin-top: 10%;
+    text-align: justify;
+    font-size: 20px;
+    width: 300px;
+    outline:none; 
+}
+
+input::placeholder {
+
+    text-align: center;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.Alinhar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.btn {
+
+    font-size: 20px;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    border: solid 1px;
+    border-color: rgb(148, 7, 255);
+    transition: all ease 0.5;
+    color: rgb(148, 7, 255);
+}
+
+.btn:hover {
+
+    background-color:  rgb(148, 7, 255); ;
+    border-color:  rgb(148, 7, 255);
+    color: white;
+    transition: all ease 0.5;
+
+}
+
+.form {
+
+    background-color: rgb(195, 195, 195);
+    max-width: 800px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+
+
+}
+
+.certo { 
+ background-color: #3F3;
+}
+
+.letra{
+    height: 100px;
+    width: 75px;
+    border: 1px solid lightgray;
+    margin: 5px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px;
+}
+
+
+.errado {
+
+
+
+}
+
+.Posiçao {
+
+}
