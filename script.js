@@ -1,9 +1,21 @@
- var idLinha = 1; 
- const Linha = document.getElementById("linha" + idLinha); 
+var idLinha = 1; 
+ var Linha = document.getElementById("linha" + idLinha); 
  const button = document.getElementById("button");
  const Input = document.getElementById("entrada");
- var Certa = "artur" 
- var teste; 
+ var Certa = ["tigre", "nuvem", "plano", "vento", "livro",
+  "prato", "fosso", "carro", "troca", "metal",
+  "festa", "navio", "mapas", "couro", "pedra",
+  "casco", "farol", "vazio", "banho", "firme",
+  "dente", "perna", "linha", "folha", 
+  "canto", "barco", "lente", "cesta", "garra",
+  "campo", "rocha", "sorte", "verde", "musgo",
+  "pular", "tocar", "setor", "carta", "muito",
+  "porta", "pente", "pulso", "suave", "cinto",
+  "amigo", "roubo", "acaso", "velho", "nobre"];
+ var teste = 0;
+ const valorAleatorio = Certa[Math.floor(Math.random() * Certa.length)];
+ Certa = valorAleatorio;
+ console.log(Certa);
  button.addEventListener("click", testarPalavra);
  Input.addEventListener("keydown", enter);
 
@@ -14,42 +26,58 @@
 
     }
  }
+
+
+
+
+
  function testarPalavra() {
 
-    let palavra = document.getElementById("entrada").value;
+    
+    let palavra = Input.value.trim(); //trim tira espaço das palavras
+
     Certa = Certa.toUpperCase();
     palavra = palavra.toUpperCase();
 
-    if(palavra.length > 5 ) {
+    if (palavra.length !== 5) {
+      alert("A palavra precisa ter cinco letras");
+      return
+    }
 
-      alert("Não tem cinco letras")
+
+    Linha = document.getElementById("linha" + idLinha);
+    if (!Linha) {
+      alert("Número máximo de tentativas atingido!");
+      return;
+      console.log("Linha não encontrada:", idLinha);
 
     }
-    else if (palavra.length <= 5) {
-    
-    for( let i=0; i < palavra.length; i++ ) {
-      if (palavra[tent1] === Certa[tent2]) {
-         criarElemento(palavra[tent1]);
+
+  
+
+    for (let i = 0; i < palavra.length; i++) {
+      const letra = palavra[i];
+      if (letra === Certa[i]) {
+         criarElemento(letra);
+      } else if (Certa.includes(letra)) {
+         criarElemento2(letra);
+      } else {
+         criarElemento3(letra);
+      }
     }
-    if ( palavra[tent1] === Certa[tent2] || i != j ) {
-         criarElemento2(palavra[tent1]);
-         console.log(palavra[tent1]);
-         }
-         else {
-         criarElemento3(palavra[tent1]);
-         console.log(palavra);
-         }
-      }       
-      tent2++;
-      if ( tent2 <= 5) {
-        tent2 = 0
-      }
-    tent1++;
-      }
     idLinha++;
-    Linha = document.getElementById("linha" + idLinha); 
-   }  
- 
+    Input.value = "";
+    Input.focus();
+ } 
+
+ function resetar () {
+
+  if (idLinha  < 5 )
+  {
+    window.location.reload();
+}
+}
+
 
  function criarElemento(letra) {
    console.log(letra)
