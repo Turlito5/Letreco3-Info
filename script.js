@@ -68,6 +68,8 @@ var idLinha = 1;
     idLinha++;
     Input.value = "";
     Input.focus();
+
+
  } 
 
  function resetar () {
